@@ -8,18 +8,18 @@
 </template>
 
 <script>
-import Header from "./layout/header.vue";
-import todo from "./views/todo/todo.vue";
-import Footer from "./layout/footer.jsx";
+import Header from './layout/header.vue'
+import todo from './views/todo/todo.vue'
+import Footer from './layout/footer.jsx'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Header,
     todo,
     Footer
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>

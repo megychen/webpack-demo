@@ -38,7 +38,7 @@ if (isDev) {
         {
           test: /\.styl/,
           use: [
-            'style-loader',
+            'vue-style-loader',
             'css-loader',
             {
               loader: 'postcss-loader',
@@ -79,6 +79,7 @@ if (isDev) {
                 // publicPath: '../'
               }
             },
+            'vue-style-loader',
             "css-loader",
             {
               loader: 'postcss-loader',

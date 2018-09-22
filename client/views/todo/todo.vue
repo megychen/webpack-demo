@@ -26,53 +26,53 @@
 </template>
 
 <script>
-import item from "./item.vue";
-import tabs from "./tabs.vue";
+import item from './item.vue'
+import tabs from './tabs.vue'
 
 export default {
-  name: "Todo",
+  name: 'Todo',
   components: {
     item,
     tabs
   },
-  data() {
+  data () {
     return {
       todos: [],
       id: 0,
-      content: "",
-      filter: "all"
-    };
+      content: '',
+      filter: 'all'
+    }
   },
   computed: {
-    filterTodos() {
-      if (this.filter === "all") {
-        return this.todos;
+    filterTodos () {
+      if (this.filter === 'all') {
+        return this.todos
       }
-      const completed = this.filter === "completed" ? true : false;
-      return this.todos.filter(todo => completed === todo.completed);
+      const completed = this.filter === 'completed'
+      return this.todos.filter(todo => completed === todo.completed)
     }
   },
   methods: {
-    addTodo() {
+    addTodo () {
       this.todos.unshift({
         id: this.id++,
         content: this.content,
         completed: false
-      });
-      this.content = "";
+      })
+      this.content = ''
     },
-    deleteTodo(id) {
-      this.todos.splice(this.todos.findIndex(todo => todo.id === id), 1);
+    deleteTodo (id) {
+      this.todos.splice(this.todos.findIndex(todo => todo.id === id), 1)
     },
-    toggleFilter(state) {
-      this.filter = state;
-      console.log(this.filter);
+    toggleFilter (state) {
+      this.filter = state
+      console.log(this.filter)
     },
-    clearAllCompleted() {
-      this.todos = this.todos.filter(todo => !todo.completed);
+    clearAllCompleted () {
+      this.todos = this.todos.filter(todo => !todo.completed)
     }
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>

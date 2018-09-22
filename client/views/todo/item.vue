@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "Item",
+  name: 'Item',
   props: {
     todo: {
       type: Object,
@@ -16,11 +16,11 @@ export default {
     }
   },
   methods: {
-    deleteTodo() {
-      this.$emit("del", this.todo.id);
+    deleteTodo () {
+      this.$emit('del', this.todo.id)
     }
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>
