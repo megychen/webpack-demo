@@ -1,12 +1,10 @@
 // 基础配置
 const path = require('path')
 
-const isDev = process.env.NODE_ENV  === 'development'
-
 const config = {
   target: 'web',
-  mode: 'development',
-  entry: path.join(__dirname, '../client/index.js'),
+  mode: process.env.NODE_ENV || 'production',
+  entry: path.join(__dirname, '../practice/index.js'),
   output: {
     filename: 'bundle.[hash:8].js',
     path: path.join(__dirname, '../dist')
