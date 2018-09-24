@@ -3,6 +3,7 @@
     <div id="cover"></div>
     <Header></Header>
     <todo></todo>
+    <!-- <router-view /> -->
     <Footer></Footer>
   </div>
 </template>
@@ -36,7 +37,7 @@ export default {
       right: 0;
       bottom: 0;
       background-color: #999;
-      opacity: 0.9;
+      opacity: 0.6;
       z-index: -1;
     }
   }

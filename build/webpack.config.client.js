@@ -16,7 +16,9 @@ const defaultPlugins = [
     }
   }),
   new VueLoaderPlugin(),
-  new HTMLPlugin()
+  new HTMLPlugin({
+    template: path.join(__dirname, 'template.html')
+  })
 ]
 
 const devServer = {
@@ -24,6 +26,9 @@ const devServer = {
   host: '0.0.0.0',
   overlay: {
     errors: true
+  },
+  historyApiFallback: {
+    index: '/index.html'
   },
   hot: true
 }
@@ -52,6 +57,12 @@ if (isDev) {
       ]
     },
     devServer,
+    resolve: {
+      alias: {
+        'vue': path.join(__dirname, '../node_modules/vue/dist/vue.esm.js')
+      },
+      extensions: ['*', '.js', '.vue', '.json']
+    },
     plugins: defaultPlugins.concat([
       new webpack.HotModuleReplacementPlugin()
     ])
@@ -78,7 +89,7 @@ if (isDev) {
                 // publicPath: '../'
               }
             },
-            'vue-style-loader',
+            // 'vue-style-loader',
             "css-loader",
             {
               loader: 'postcss-loader',

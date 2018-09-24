@@ -4,7 +4,7 @@ const path = require('path')
 const config = {
   target: 'web',
   mode: process.env.NODE_ENV || 'production',
-  entry: path.join(__dirname, '../practice/index.js'),
+  entry: path.join(__dirname, '../client/index.js'),
   output: {
     filename: 'bundle.[hash:8].js',
     path: path.join(__dirname, '../dist')

@@ -35,6 +35,18 @@ export default {
     item,
     tabs
   },
+  beforeRouteEnter (to, from, next) {
+    console.log('todo before enter')
+    next()
+  },
+  beforeRouteUpdate (to, from, next) {
+    console.log('todo before update')
+    next()
+  },
+  beforeRouteLeave (to, from, next) {
+    console.log('todo before leave')
+    next()
+  },
   data () {
     return {
       todos: [],
